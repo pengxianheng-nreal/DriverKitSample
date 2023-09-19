@@ -10,6 +10,7 @@ An interactive command-line client for calling the installed null driver.
 #include <IOKit/IOReturn.h>
 #include <IOKit/IOKitLib.h>
 #include <IOKit/hidsystem/IOHIDShared.h>
+using namespace std;
 
 typedef struct {
     uint64_t foo;
@@ -212,7 +213,9 @@ int main(int argc, const char* argv[])
         printf("7. Async Action\n");
         printf("0. Exit\n");
         printf("Select a message type to send: ");
-        scanf("%llu", &inputSelection);
+       // scanf("%llu", &inputSelection);
+       inputSelection = 6;
+
 
         switch (inputSelection)
         {
@@ -399,7 +402,9 @@ int main(int argc, const char* argv[])
                 printf("Invalid input, try again.\n");
             } break;
         }
-
+        
+        printf("current can support only test once \n");
+        break;
         printf("\n");
     }
 

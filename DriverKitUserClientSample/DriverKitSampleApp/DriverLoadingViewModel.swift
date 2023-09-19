@@ -6,7 +6,9 @@ The view model that indicates the state of driver loading.
 */
 
 import Foundation
+#if os(macOS)
 import SystemExtensions
+#endif
 import os.log
 
 class DriverLoadingStateMachine {
@@ -75,7 +77,8 @@ class DriverLoadingViewModel: NSObject {
     // Your dext may not start in unloaded state every time. Add logic or states to check this.
     @Published private var state: DriverLoadingStateMachine.State = .unloaded
 
-    private let dextIdentifier: String = "com.example.apple-samplecode.dext-to-user-client.driver"
+    //private let dextIdentifier: String = "com.example.apple-samplecode.dext-to-user-client.driver"
+    private let dextIdentifier: String = "com.xreal.nrsdk.driver.demo.Driver"
 
     public var dextLoadingState: String {
         switch state {
@@ -99,8 +102,13 @@ extension DriverLoadingViewModel: ObservableObject {
 
 extension DriverLoadingViewModel {
 
+#if os(macOS)
     func activateMyDext() {
         activateExtension(dextIdentifier)
+    }
+    
+    func deactivateMyDext() {
+        deactivateExtension(dextIdentifier)
     }
 
     /// - Tag: ActivateExtension
@@ -124,8 +132,10 @@ extension DriverLoadingViewModel {
 
         // Update your state machine with deactivation states and process that change here
     }
+#endif
 }
 
+#if os(macOS)
 extension DriverLoadingViewModel: OSSystemExtensionRequestDelegate {
 
     func request(_ request: OSSystemExtensionRequest,
@@ -180,3 +190,4 @@ extension DriverLoadingViewModel: OSSystemExtensionRequestDelegate {
         self.state = DriverLoadingStateMachine.process(self.state, .activationFailed)
     }
 }
+#endif

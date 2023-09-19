@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "62A475622515567200B50752"
-               BuildableName = "com.example.apple-samplecode.dext-to-user-client.driver.dext"
+               BuildableName = "com.xreal.nrsdk.driver.demo.Driver.dext"
                BlueprintName = "NullDriver"
                ReferencedContainer = "container:DriverKitUserClientSample.xcodeproj">
             </BuildableReference>
@@ -51,7 +51,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "62A475622515567200B50752"
-            BuildableName = "com.example.apple-samplecode.dext-to-user-client.driver.dext"
+            BuildableName = "com.xreal.nrsdk.driver.demo.Driver.dext"
             BlueprintName = "NullDriver"
             ReferencedContainer = "container:DriverKitUserClientSample.xcodeproj">
          </BuildableReference>

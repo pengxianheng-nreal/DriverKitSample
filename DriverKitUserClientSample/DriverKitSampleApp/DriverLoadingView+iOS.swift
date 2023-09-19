@@ -9,30 +9,17 @@ import SwiftUI
 
 struct DriverLoadingView: View {
 
-    @ObservedObject var viewModel: DriverLoadingViewModel = .init()
-
     var body: some View {
         VStack(alignment: .center) {
             Text("Driver Manager")
                 .padding()
                 .font(.title)
-            Text(self.viewModel.dextLoadingState)
-                .multilineTextAlignment(.center)
             HStack {
                 Button(
                     action: {
-                        self.viewModel.activateMyDext()
+                        UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
                     }, label: {
-                        Text("Install Dext")
-                    }
-                )
-            }
-            HStack {
-                Button(
-                    action: {
-                        self.viewModel.deactivateMyDext()
-                    }, label: {
-                        Text("Uninstall Dext")
+                        Text("Open Settings to enable driver")
                     }
                 )
             }
@@ -45,3 +32,4 @@ struct DriverLoadingView_Previews: PreviewProvider {
         DriverLoadingView()
     }
 }
+

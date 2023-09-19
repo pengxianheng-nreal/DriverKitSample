@@ -101,6 +101,8 @@ struct NullDriver_IVars {
     IODispatchQueue* dispatchQueue = nullptr;
     IOTimerDispatchSource* dispatchSource = nullptr;
     OSAction* simulatedAsyncDeviceResponseAction = nullptr;
+//    IOTimerDispatchSource* timer;
+//    size_t timerCount = 0;
 };
 
 
@@ -132,9 +134,22 @@ Exit:
     return false;
 }
 
+//void
+//IMPL(NullDriver,TimerOccurred)
+//{
+//    kern_return_t ret;
+//    ivars->timerCount +=1;
+//    ret = ivars->timer->WakeAtTime(kIOTimerClockRealTime,clock_gettime_nsec_np(CLOCK_REALTIME)+1ULL*
+//                                   kSecondScale,0);
+//    assert(ret == kIOReturnSuccess);
+//    
+//}
+
 kern_return_t IMPL(NullDriver, Start)
 {
     kern_return_t ret = kIOReturnSuccess;
+//    OSAction *timerAction = NULL;
+//    IOTimerDispatchSource* timer = NULL;
 
     ret = Start(provider, SUPERDISPATCH);
     if (ret != kIOReturnSuccess)
@@ -142,7 +157,11 @@ kern_return_t IMPL(NullDriver, Start)
         Log("Start() - super::Start failed with error: 0x%08x.", ret);
         goto Exit;
     }
-
+    os_log(OS_LOG_DEFAULT,"NullDriver: Hello World");
+//    ret = CreateActionTimerOccurred(sizeof(void *),&timerAction);
+//    assert(ret == kIOReturnSuccess);
+//    assert(timerAction !=NULL );
+    
     ret = IODispatchQueue::Create("NullDriverDispatchQueue", 0, 0, &ivars->dispatchQueue);
     if (ret != kIOReturnSuccess)
     {
