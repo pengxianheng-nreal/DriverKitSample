@@ -215,14 +215,14 @@ int main(int argc, const char* argv[])
         printf("Select a message type to send: ");
        // scanf("%llu", &inputSelection);
        inputSelection = 6;
-
-
+        
         switch (inputSelection)
         {
             case 0: // "Exit"
             {
                 runProgram = false;
-            } break;
+            } 
+            break;
 
             case 1: // "Scalar"
             {
@@ -406,7 +406,7 @@ int main(int argc, const char* argv[])
         printf("current can support only test once \n");
         break;
         printf("\n");
-    }
+    } 
 
     CFRelease(globalRunLoop);
     return EXIT_SUCCESS;

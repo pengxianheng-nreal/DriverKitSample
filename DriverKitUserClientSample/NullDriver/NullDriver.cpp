@@ -157,7 +157,7 @@ kern_return_t IMPL(NullDriver, Start)
         Log("Start() - super::Start failed with error: 0x%08x.", ret);
         goto Exit;
     }
-    os_log(OS_LOG_DEFAULT,"NullDriver: Hello World");
+    os_log(OS_LOG_DEFAULT,"NullDriver: Hello World hello");
 //    ret = CreateActionTimerOccurred(sizeof(void *),&timerAction);
 //    assert(ret == kIOReturnSuccess);
 //    assert(timerAction !=NULL );
