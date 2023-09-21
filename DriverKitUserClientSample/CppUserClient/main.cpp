@@ -214,7 +214,7 @@ int main(int argc, const char* argv[])
         printf("0. Exit\n");
         printf("Select a message type to send: ");
        // scanf("%llu", &inputSelection);
-       inputSelection = 6;
+       inputSelection = 1;
         
         switch (inputSelection)
         {
