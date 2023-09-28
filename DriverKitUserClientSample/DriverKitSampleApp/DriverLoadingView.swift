@@ -36,6 +36,15 @@ struct DriverLoadingView: View {
                     }
                 )
             }
+            HStack {
+                Button(
+                    action: {
+                        CppTestWrapper().testcpp()
+                    }, label: {
+                        Text("Communicate with Dext")
+                    }
+                )
+            }
         }.frame(width: 500, height: 200, alignment: .center)
     }
 }

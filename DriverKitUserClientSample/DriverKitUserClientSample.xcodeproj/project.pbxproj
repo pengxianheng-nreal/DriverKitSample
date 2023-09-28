@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18BBD6122AC4529F00C012B7 /* user_client.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18BBD6102AC4529F00C012B7 /* user_client.cpp */; };
+		18BBD6162AC4535E00C012B7 /* DriverKitSampleApp-Bridging-Header.mm in Sources */ = {isa = PBXBuildFile; fileRef = 18BBD6152AC4535E00C012B7 /* DriverKitSampleApp-Bridging-Header.mm */; };
 		18D991652AA8A23100C80FD3 /* DriverLoadingView+iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D991642AA8A23100C80FD3 /* DriverLoadingView+iOS.swift */; platformFilter = ios; };
 		18D991672AA8A32600C80FD3 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 18D991662AA8A32600C80FD3 /* Settings.bundle */; };
 		52DBF5EB25E5ECF600CCE289 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52DBF5EA25E5ECF600CCE289 /* main.cpp */; };
@@ -49,6 +51,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		18BBD60F2AC4529E00C012B7 /* DriverKitSampleApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DriverKitSampleApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		18BBD6102AC4529F00C012B7 /* user_client.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = user_client.cpp; sourceTree = "<group>"; };
+		18BBD6112AC4529F00C012B7 /* user_client.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = user_client.hpp; sourceTree = "<group>"; };
+		18BBD6152AC4535E00C012B7 /* DriverKitSampleApp-Bridging-Header.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "DriverKitSampleApp-Bridging-Header.mm"; sourceTree = "<group>"; };
 		18D991642AA8A23100C80FD3 /* DriverLoadingView+iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DriverLoadingView+iOS.swift"; sourceTree = "<group>"; };
 		18D991662AA8A32600C80FD3 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		52DBF5DC25E5ECF400CCE289 /* CppUserClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CppUserClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -151,6 +157,7 @@
 		62A4754F2515566500B50752 /* DriverKitSampleApp */ = {
 			isa = PBXGroup;
 			children = (
+				18BBD6152AC4535E00C012B7 /* DriverKitSampleApp-Bridging-Header.mm */,
 				62A475502515566500B50752 /* DriverKitSampleApp.swift */,
 				629413C42518E5D900478C2B /* DriverLoadingView.swift */,
 				18D991642AA8A23100C80FD3 /* DriverLoadingView+iOS.swift */,
@@ -160,6 +167,9 @@
 				62A4755A2515566600B50752 /* DriverKitSampleApp.entitlements */,
 				62A475562515566600B50752 /* Preview Content */,
 				18D991662AA8A32600C80FD3 /* Settings.bundle */,
+				18BBD6102AC4529F00C012B7 /* user_client.cpp */,
+				18BBD6112AC4529F00C012B7 /* user_client.hpp */,
+				18BBD60F2AC4529E00C012B7 /* DriverKitSampleApp-Bridging-Header.h */,
 			);
 			path = DriverKitSampleApp;
 			sourceTree = "<group>";
@@ -293,6 +303,7 @@
 					};
 					62A4754D2515566500B50752 = {
 						CreatedOnToolsVersion = 12.0;
+						LastSwiftMigration = 1500;
 					};
 					62A475622515567200B50752 = {
 						CreatedOnToolsVersion = 12.0;
@@ -360,10 +371,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18BBD6122AC4529F00C012B7 /* user_client.cpp in Sources */,
 				629413C72518E61500478C2B /* DriverLoadingViewModel.swift in Sources */,
 				18D991652AA8A23100C80FD3 /* DriverLoadingView+iOS.swift in Sources */,
 				629413C52518E5D900478C2B /* DriverLoadingView.swift in Sources */,
 				62A475512515566500B50752 /* DriverKitSampleApp.swift in Sources */,
+				18BBD6162AC4535E00C012B7 /* DriverKitSampleApp-Bridging-Header.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -556,6 +569,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = DriverKitSampleApp/DriverKitSampleApp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
@@ -576,6 +590,8 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SUPPORTS_MACCATALYST = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "DriverKitSampleApp/DriverKitSampleApp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -587,6 +603,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = DriverKitSampleApp/DriverKitSampleApp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
@@ -607,6 +624,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SUPPORTS_MACCATALYST = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "DriverKitSampleApp/DriverKitSampleApp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
